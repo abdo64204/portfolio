@@ -31,9 +31,10 @@ export class ProjectsComponent {
       name: 'Weather Website',
       category: 'Weather Application',
       description:
-        'A responsive weather application that allows users to check weather information through a simple and user-friendly interface.',
-      technologies: ['Angular', 'TypeScript', 'API Integration', 'HTML', 'SCSS'],
+        'A responsive weather application built with Angular that retrieves and displays weather information using a weather API, with a clean and user-friendly interface.',
+      technologies: ['Angular', 'TypeScript', 'HTML5', 'SCSS', 'REST API'],
       liveUrl: 'https://partical-h41bk3v40-bodi2.vercel.app/',
+      githubUrl: 'https://github.com/abdo64204/weather-website',
     },
     {
       name: 'E-Commerce Website',
