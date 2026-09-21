@@ -1,4 +1,5 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, signal, effect, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,7 @@ import { Component, HostListener, signal } from '@angular/core';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+  private readonly document = inject(DOCUMENT);
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
 
@@ -19,9 +21,33 @@ export class NavbarComponent {
     { label: 'Contact', href: '#contact' },
   ];
 
+  constructor() {
+    effect(() => {
+      if (this.isMobileMenuOpen()) {
+        this.document.body.classList.add('menu-open');
+      } else {
+        this.document.body.classList.remove('menu-open');
+      }
+    });
+  }
+
   @HostListener('window:scroll')
   onScroll() {
     this.isScrolled.set(window.scrollY > 50);
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth >= 768 && this.isMobileMenuOpen()) {
+      this.closeMenu();
+    }
+  }
+
+  @HostListener('window:keydown.escape')
+  onEscape() {
+    if (this.isMobileMenuOpen()) {
+      this.closeMenu();
+    }
   }
 
   toggleMenu() {

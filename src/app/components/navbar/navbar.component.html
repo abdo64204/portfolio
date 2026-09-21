@@ -1,10 +1,18 @@
 <nav class="navbar" [class.scrolled]="isScrolled()">
   <div class="navbar-container container">
-    <a class="navbar-logo" href="#home" (click)="scrollTo($event, '#home')">
+    <a class="navbar-logo" href="#home" (click)="scrollTo($event, '#home')" aria-label="Abdalrahman Mohamed Home">
       <span class="logo-bracket">&lt;</span>AM<span class="logo-bracket"> /&gt;</span>
     </a>
 
-    <ul class="navbar-links" [class.active]="isMobileMenuOpen()">
+    <!-- Backdrop overlay for mobile menu -->
+    <div
+      class="navbar-backdrop"
+      [class.active]="isMobileMenuOpen()"
+      (click)="closeMenu()"
+      aria-hidden="true"
+    ></div>
+
+    <ul class="navbar-links" [class.active]="isMobileMenuOpen()" id="navbar-navigation-menu">
       @for (link of navLinks; track link.href) {
         <li>
           <a [href]="link.href" (click)="scrollTo($event, link.href)">
@@ -19,6 +27,7 @@
       [class.active]="isMobileMenuOpen()"
       (click)="toggleMenu()"
       [attr.aria-expanded]="isMobileMenuOpen()"
+      aria-controls="navbar-navigation-menu"
       aria-label="Toggle navigation menu"
     >
       <span class="bar"></span>
