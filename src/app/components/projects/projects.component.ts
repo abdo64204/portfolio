@@ -37,12 +37,13 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/abdo64204/weather-website',
     },
     {
-      name: 'E-Commerce Website',
+      name: 'ShopEase — E-Commerce Website',
       category: 'E-Commerce',
       description:
-        'A modern e-commerce application built with Angular, featuring product browsing, product cards, filtering, navigation, and shopping-cart functionality.',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'SCSS', 'REST API'],
-      status: 'Currently in Development',
+        'Developed a responsive e-commerce website using Angular with reusable components, product browsing, filtering, navigation, shopping cart functionality, and REST API integration.',
+      technologies: ['Angular', 'TypeScript', 'HTML5', 'SCSS', 'REST API'],
+      liveUrl: 'https://shopease-ecommerce-red-nine.vercel.app/home',
+      githubUrl: 'https://github.com/abdo64204/shopease-ecommerce',
     },
   ];
 }
