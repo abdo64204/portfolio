@@ -45,5 +45,14 @@ export class ProjectsComponent {
       liveUrl: 'https://shopease-ecommerce-red-nine.vercel.app/home',
       githubUrl: 'https://github.com/abdo64204/shopease-ecommerce',
     },
+    {
+      name: 'Derma Bastion',
+      category: 'E-Commerce',
+      description:
+        'A skincare e-commerce website featuring product browsing, wishlist, shopping cart, checkout, order tracking, and multi-language support with a clean, responsive design.',
+      technologies: ['Angular', 'TypeScript', 'SCSS', 'RxJS'],
+      liveUrl: 'https://derma-bastion.vercel.app',
+      githubUrl: 'https://github.com/abdo64204/derma-bastion',
+    },
   ];
 }
